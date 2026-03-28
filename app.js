@@ -56,15 +56,17 @@ if (leadForm && formStatus) {
     const formData = new FormData(leadForm);
     const name = formData.get("name");
     const phone = formData.get("phone");
+    const email = formData.get("email");
     const category = formData.get("category");
     const message = formData.get("message");
 
     const subject = encodeURIComponent(`New Gravion Query - ${category || "General Enquiry"}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nCategory: ${category}\n\nRequirement:\n${message}`
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email || "Not provided"}\nCategory: ${category}\n\nRequirement:\n${message}`
     );
 
     formStatus.textContent = "Query prepared. Your email app will open so you can send it directly.";
+    leadForm.reset();
     window.location.href = `mailto:info@gravionprofin.com?subject=${subject}&body=${body}`;
   });
 }

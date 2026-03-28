@@ -27,6 +27,10 @@ html {
   scroll-behavior: smooth;
 }
 
+main section[id] {
+  scroll-margin-top: 92px;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -322,7 +326,7 @@ summary:focus-visible {
 .hero,
 .section,
 .footer {
-  margin-top: 26px;
+  margin-top: 30px;
 }
 
 .hero {
@@ -745,8 +749,11 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: 22px;
-  padding: 22px;
+  padding: 24px;
   border-radius: 16px;
+  align-items: start;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(245, 249, 255, 0.98));
 }
 
 .contact-signal-grid {
@@ -820,6 +827,9 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   gap: 22px;
+  grid-column: 1 / -1;
+  align-items: stretch;
+  padding-top: 6px;
 }
 
 .query-form,
@@ -835,6 +845,21 @@ summary:focus-visible {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   padding: 22px;
+  align-content: start;
+}
+
+.query-form-heading h3 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.42rem;
+  line-height: 1.15;
+}
+
+.query-form-heading p:last-child {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.62;
 }
 
 .query-form label {
@@ -994,6 +1019,10 @@ summary:focus-visible {
   .contact-signal-grid,
   .quick-categories {
     grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    padding: 22px;
   }
 
   .hero h1 {
