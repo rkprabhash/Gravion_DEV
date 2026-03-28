@@ -29,13 +29,15 @@
   >
   <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page-aurora" aria-hidden="true"></div>
   <div class="page-grid" aria-hidden="true"></div>
+  <div class="page-pulse pulse-one" aria-hidden="true"></div>
+  <div class="page-pulse pulse-two" aria-hidden="true"></div>
   <div class="site-shell">
     <header class="topbar">
-      <a class="brand" href="#hero" aria-label="Gravion Profin home">
+      <a class="brand" href="#top" aria-label="Gravion Profin home">
         <span class="brand-mark">G</span>
         <span class="brand-copy">
           <strong>Gravion Profin</strong>
@@ -50,16 +52,17 @@
 
       <div class="topbar-panel" id="site-nav">
         <nav class="nav" aria-label="Primary">
+          <a href="#top">Home</a>
           <a href="#services">Services</a>
           <a href="#services">Loan Products</a>
           <a href="#services">Insurance</a>
           <a href="#process">Claim</a>
-          <a href="#contact">Support</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         <div class="topbar-actions">
           <a class="button ghost call-action" href="tel:+918448702809">Talk to Expert</a>
-          <a class="button outline" href="#contact">Sign in</a>
+          <a class="button outline" href="#contact-form">Query</a>
         </div>
       </div>
     </header>
@@ -67,6 +70,10 @@
     <main id="main-content">
       <section id="hero" class="hero">
         <div class="hero-copy reveal">
+          <div class="hero-badge-row">
+            <span class="hero-chip">Trusted Finance Partner</span>
+            <span class="hero-chip highlight">Colorful digital-first advisory</span>
+          </div>
           <p class="eyebrow">Financial Advisory For Individuals And Businesses</p>
           <h1>Compare the right path for loans, insurance, and compliance support.</h1>
           <p class="hero-summary">
@@ -78,6 +85,21 @@
           <div class="hero-actions">
             <a class="button primary" href="#contact">Request Consultation</a>
             <a class="button secondary" href="https://wa.me/918448702809" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+
+          <div class="hero-kpis" aria-label="Key highlights">
+            <div class="hero-kpi">
+              <strong>Loans</strong>
+              <span>Personal, business, home, and vehicle advisory</span>
+            </div>
+            <div class="hero-kpi">
+              <strong>Insurance</strong>
+              <span>Health, life, motor, renewals, and claims</span>
+            </div>
+            <div class="hero-kpi">
+              <strong>Compliance</strong>
+              <span>GST, ROC, tax, and registration support</span>
+            </div>
           </div>
 
           <div class="quick-categories" aria-label="Popular categories">
@@ -101,11 +123,11 @@
         </div>
 
         <aside class="hero-panel reveal">
-          <div class="hero-form-card">
+          <div class="hero-form-card animated-panel">
             <p class="form-kicker">Popular enquiries</p>
             <h2>Choose what you need help with</h2>
             <div class="enquiry-list">
-              <div class="enquiry-item">
+              <div class="enquiry-item active">
                 <strong>Loan support</strong>
                 <span>Personal, business, home, car, project reports</span>
               </div>
@@ -288,6 +310,17 @@
             Whether the requirement is personal or business-related, the team can help you review
             next steps, documentation, and available service support.
           </p>
+
+          <div class="contact-signal-grid">
+            <div class="contact-signal-card">
+              <strong>Fast response path</strong>
+              <span>Choose call, WhatsApp, or submit a query below.</span>
+            </div>
+            <div class="contact-signal-card">
+              <strong>Guided support</strong>
+              <span>Share your requirement and the team can direct you quickly.</span>
+            </div>
+          </div>
         </div>
 
         <div class="contact-card">
@@ -306,6 +339,79 @@
           <div class="contact-line static">
             <span>Office</span>
             <strong>Plot no 9, Roshan Nagar, Sector 91, Faridabad 121013</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-form" class="section query-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Send Query</p>
+          <h2>Fill your requirement and let the team reach out with the right next step.</h2>
+          <p>
+            This form is designed for quick enquiry capture across loans, insurance, and business
+            compliance requests.
+          </p>
+        </div>
+
+        <div class="query-shell">
+          <form class="query-form" id="lead-form">
+            <label>
+              <span>Full name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Phone number</span>
+              <input type="tel" name="phone" placeholder="+91 98XXXXXXXX" required>
+            </label>
+            <label>
+              <span>Email address</span>
+              <input type="email" name="email" placeholder="you@example.com">
+            </label>
+            <label>
+              <span>Requirement type</span>
+              <select name="category" required>
+                <option value="">Select a category</option>
+                <option value="Loan Advisory">Loan Advisory</option>
+                <option value="Insurance Support">Insurance Support</option>
+                <option value="Compliance Services">Compliance Services</option>
+                <option value="General Enquiry">General Enquiry</option>
+              </select>
+            </label>
+            <label class="full-span">
+              <span>Your query</span>
+              <textarea name="message" rows="5" placeholder="Tell us what you need help with" required></textarea>
+            </label>
+            <div class="form-actions full-span">
+              <button class="button primary" type="submit">Submit Query</button>
+              <a class="button secondary" href="https://wa.me/918448702809" target="_blank" rel="noreferrer">Continue on WhatsApp</a>
+            </div>
+            <p class="form-note full-span" id="form-status" aria-live="polite"></p>
+          </form>
+
+          <div class="query-visual">
+            <div class="visual-orb"></div>
+            <div class="visual-card">
+              <p class="form-kicker">Dynamic Advisory Flow</p>
+              <h3>Modern, colorful, and still credible.</h3>
+              <p>
+                Neon highlights, soft animated glows, and layered cards make the experience feel
+                more current while keeping the underlying finance-first structure intact.
+              </p>
+              <div class="visual-metrics">
+                <div>
+                  <strong>3</strong>
+                  <span>primary service tracks</span>
+                </div>
+                <div>
+                  <strong>1</strong>
+                  <span>simple enquiry path</span>
+                </div>
+                <div>
+                  <strong>24/7</strong>
+                  <span>web presence for inbound leads</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

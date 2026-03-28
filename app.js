@@ -2,6 +2,8 @@ const menuToggle = document.querySelector(".menu-toggle");
 const topbarPanel = document.querySelector(".topbar-panel");
 const revealItems = document.querySelectorAll(".reveal");
 const currentYear = document.getElementById("current-year");
+const leadForm = document.getElementById("lead-form");
+const formStatus = document.getElementById("form-status");
 
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
@@ -22,6 +24,48 @@ if (menuToggle && topbarPanel) {
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.textContent = "Menu";
     });
+  });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const targetId = anchor.getAttribute("href");
+
+    if (!targetId || targetId === "#") {
+      return;
+    }
+
+    const target = document.querySelector(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+});
+
+if (leadForm && formStatus) {
+  leadForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(leadForm);
+    const name = formData.get("name");
+    const phone = formData.get("phone");
+    const category = formData.get("category");
+    const message = formData.get("message");
+
+    const subject = encodeURIComponent(`New Gravion Query - ${category || "General Enquiry"}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nCategory: ${category}\n\nRequirement:\n${message}`
+    );
+
+    formStatus.textContent = "Query prepared. Your email app will open so you can send it directly.";
+    window.location.href = `mailto:info@gravionprofin.com?subject=${subject}&body=${body}`;
   });
 }
 
