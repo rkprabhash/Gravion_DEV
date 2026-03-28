@@ -747,9 +747,9 @@ summary:focus-visible {
 
 .contact-section {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap: 22px;
-  padding: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+  gap: 20px;
+  padding: 26px;
   border-radius: 16px;
   align-items: start;
   background:
@@ -791,6 +791,7 @@ summary:focus-visible {
   gap: 12px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 249, 252, 0.96));
+  align-content: start;
 }
 
 .contact-line {
@@ -825,11 +826,11 @@ summary:focus-visible {
 
 .query-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-  gap: 22px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.85fr);
+  gap: 20px;
   grid-column: 1 / -1;
   align-items: stretch;
-  padding-top: 6px;
+  padding-top: 10px;
 }
 
 .query-form,
@@ -842,9 +843,9 @@ summary:focus-visible {
 
 .query-form {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  padding: 22px;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 18px;
+  padding: 24px;
   align-content: start;
 }
 
@@ -860,6 +861,10 @@ summary:focus-visible {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.62;
+}
+
+.query-form-heading .eyebrow {
+  margin-bottom: 10px;
 }
 
 .query-form label {
@@ -886,6 +891,7 @@ summary:focus-visible {
 
 .query-form textarea {
   resize: vertical;
+  min-height: 132px;
 }
 
 .full-span {
@@ -896,6 +902,7 @@ summary:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  padding-top: 4px;
 }
 
 .form-note {
@@ -946,6 +953,7 @@ summary:focus-visible {
   margin: 10px 0 10px;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.28rem;
+  max-width: 14ch;
 }
 
 .visual-card p {
@@ -970,7 +978,7 @@ summary:focus-visible {
 
 .visual-metrics strong {
   display: block;
-  font-size: 1rem;
+  font-size: 0.92rem;
   color: #ffffff;
 }
 
@@ -1023,6 +1031,10 @@ summary:focus-visible {
 
   .contact-section {
     padding: 22px;
+  }
+
+  .query-shell {
+    padding-top: 4px;
   }
 
   .hero h1 {
